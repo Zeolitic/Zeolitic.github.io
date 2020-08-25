@@ -250,6 +250,10 @@ p{
   transition: all 0.2s ease-in-out;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.15), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   transform: scale(0.95,0.95);
+  max-width:33vw;
+  max-height:75vh;
+  width: auto;
+  height: auto;
 }
 
 #resume:hover {
