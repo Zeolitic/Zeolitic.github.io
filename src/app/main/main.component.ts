@@ -11,7 +11,7 @@ export class MainComponent implements OnInit {
 
   public interval;
   public index = -1;
-  public array = ['Car enthusiast', 'Video games', 'Computer science major', 'Buisness minor'];
+  public array = ['Car enthusiast', 'Moutain biker', 'Computer science major', 'Buisness minor'];
 
 
   typeWriter() {
