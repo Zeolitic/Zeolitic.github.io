@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # COMP3008P2
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.19.
@@ -20,3 +21,6 @@ Shown in newcomponent.jpg is a easy way to generate components with the tool
 Components are basically different screens
 The "App" component is the parent components. Any changes made on it will be reflected in the whole app.
 This is useful for things like main bars, things you'd want persisting on any page
+=======
+# Website
+>>>>>>> e6e2cef3a62f3d1e4a5f469789759c8ecbafb897
