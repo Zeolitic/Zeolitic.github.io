@@ -1,0 +1,32 @@
+<div id ='chatbot' class='chatbot' opened='false'>
+
+  <div class='top-bar'>
+    <p class='vertical-center'>BOT-Ryan (About me)</p>
+  </div>
+
+  <div class='chat' id='chat' #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <ng-container *ngFor="let message of messages">
+      <div class="message" [ngClass]="{ 'from': message.sender === 'bot', 'to': message.sender === 'user'}">
+        <div *ngIf="message.sender === 'user'">
+          <p class='user'>{{message.content}}</p>
+        </div>
+        <div *ngIf="message.sender === 'bot'">
+          <p class='bot'>{{message.content}}</p>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+
+  <div class='messagebox'>
+    <input id="chatbot-input" (keyup.enter)="sendMessage()" type="text" placeholder="Your Message" class="form-control chatbot-input">
+    <button type="button" id="chatbot-button" class='btn btn-primary chatbot-sendbutton' (click)="sendMessage()">Send</button>
+  </div>
+</div>
+
+<div class='chatbot-button' id='chatbot-button'>
+  <button id="chatbutton" (click)="hideChat()" type="button" class="btn btn-primary btn-circle btn-xl waggle"><img id="chatbubble" src='./../../assets/{{picture}}.png'></button>
+</div>
+
+
+
+
