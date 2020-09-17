@@ -5,6 +5,7 @@ import { ExampleComponent } from './example/example.component';
 import { FireworkComponent } from './firework/firework.component';
 import { MatrixComponent } from './matrix/matrix.component';
 import { FlowfieldComponent } from './flowfield/flowfield.component';
+import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.component';
 
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'examples/fireworks', component: FireworkComponent},
   { path: 'examples/matrix', component: MatrixComponent},
   { path: 'examples/flowfield', component: FlowfieldComponent},
+  { path: 'examples/marchingsquares', component: MarchingsquaresComponent},
   { path: '**', component: MainComponent}
 ];
 

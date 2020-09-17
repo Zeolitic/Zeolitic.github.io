@@ -38,11 +38,20 @@ export class FlowfieldComponent implements OnInit {
 
     let flowfield;
 
+    let checkbox;
+    let button;
+
     p.setup = () => {
       p.createCanvas(800, 800);
       p.background(255);
       cols = p.floor(p.width / scale);
       rows = p.floor(p.height / scale);
+
+      checkbox = p.createCheckbox('Colored Mode', false);
+      checkbox.changed(myCheckedEvent);
+
+      button = p.createButton('Clear Page');
+      button.mousePressed(myCheckedEventClear);
 
       flowfield = new Array(cols * rows);
 
@@ -51,6 +60,24 @@ export class FlowfieldComponent implements OnInit {
       }
 
     };
+
+    function myCheckedEvent() {
+      if (this.checked()) {
+        for (const particle of particles) {
+          particle.colFlag = true;
+        }
+        p.background(255);
+      } else {
+        for (const particle of particles) {
+          particle.colFlag = false;
+        }
+        p.background(255);
+      }
+    }
+
+    function myCheckedEventClear() {
+      p.background(255);
+    }
 
     p.draw = () => {
 

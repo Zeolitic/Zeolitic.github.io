@@ -14,11 +14,22 @@ export class Particle {
   private rows;
   private scale;
 
+  private red;
+  private green;
+  private blue;
+  public colFlag = false;
+
+
   constructor(p, c, r, s) {
     this.p = p;
     this.cols = c;
     this.rows = r;
     this.scale = s;
+
+
+    this.red = this.p.random(255); // r is a random number between 0 - 255
+    this.green = this.p.random(255); // g is a random number betwen 100 - 200
+    this.blue = this.p.random(255); // b is a random number between 0 - 100
 
     this.pos = this.p.createVector(p.random(p.width), p.random(p.height));
     this.vel = this.p.createVector(0, 0);
@@ -70,7 +81,11 @@ export class Particle {
   }
 
   show() {
-    this.p.stroke(0, 5);
+    if (this.colFlag) {
+      this.p.stroke(this.red, this.blue, this.green, 25);
+    } else {
+      this.p.stroke(0, 5);
+    }
     this.p.strokeWeight(1);
     this.p.line(this.pos.x, this.pos.y, this.prevPos.x, this.prevPos.y);
     this.updatePrev();
