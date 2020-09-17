@@ -1,2 +1,1 @@
-ng build --prod --base-href /website/
-pause
+ng build --prod
