@@ -8,6 +8,8 @@ import { ChatbotComponent } from './chatbot/chatbot.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ExampleComponent } from './example/example.component';
 import { FireworkComponent } from './firework/firework.component';
+import { MatrixComponent } from './matrix/matrix.component';
+import { FlowfieldComponent } from './flowfield/flowfield.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { FireworkComponent } from './firework/firework.component';
     MainComponent,
     ChatbotComponent,
     ExampleComponent,
-    FireworkComponent
+    FireworkComponent,
+    MatrixComponent,
+    FlowfieldComponent
   ],
   imports: [
     BrowserModule,
