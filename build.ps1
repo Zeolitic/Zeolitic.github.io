@@ -1,2 +1,2 @@
-ng build --outputPath=C:\Users\RyanGaming\Documents\GitHub\build
+ng build --prod --base-href /website/
 pause
