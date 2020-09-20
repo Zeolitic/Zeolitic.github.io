@@ -233,7 +233,7 @@ export class MarchingsquaresComponent implements OnInit {
                 p.triangle(a.x, a.y - scale * 0.5, d.x, d.y, c.x  + scale * 0.5, c.y);
                 break;
               case 5:
-                p.triangle(d.x , d.y + scale * 0.5, a.x, a.y, b.x + scale * 0.5, b.y);
+                p.triangle(d.x, d.y - scale * 0.5 , a.x, a.y, b.x - scale * 0.5, b.y) ;
                 p.triangle(a.x, a.y, b.x - scale * 0.5, b.y, d.x, d.y - scale * 0.5);
                 break;
               case 6:
@@ -249,8 +249,8 @@ export class MarchingsquaresComponent implements OnInit {
                 p.rect(a.x + 0.5 * scale, a.y, scale * 0.5, scale);
                 break;
               case 10:
-                p.triangle(a.x - scale * 0.5 , a.y, b.x, b.y, c.x, c.y + scale * 0.5);
-                p.triangle(a.x, a.y - scale * 0.5, d.x, d.y, c.x  + scale * 0.5, c.y);
+                p.triangle(a.x + scale * 0.5 , a.y, b.x, b.y, c.x, c.y -  scale * 0.5);
+                p.triangle(a.x, a.y + scale * 0.5, d.x, d.y, c.x - scale * 0.5, c.y);
                 break;
               case 11:
                 p.triangle(a.x + 0.5 * scale, a.y, b.x, b.y, c.x, c.y - 0.5 * scale);
