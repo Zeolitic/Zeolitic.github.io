@@ -11,6 +11,7 @@ import { FireworkComponent } from './firework/firework.component';
 import { MatrixComponent } from './matrix/matrix.component';
 import { FlowfieldComponent } from './flowfield/flowfield.component';
 import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.component';
+import { RaindropComponent } from './raindrop/raindrop.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.comp
     FireworkComponent,
     MatrixComponent,
     FlowfieldComponent,
-    MarchingsquaresComponent
+    MarchingsquaresComponent,
+    RaindropComponent
   ],
   imports: [
     BrowserModule,

@@ -46,6 +46,7 @@ export class FlowfieldComponent implements OnInit {
       p.background(255);
       cols = p.floor(p.width / scale);
       rows = p.floor(p.height / scale);
+      p.colorMode(p.HSB);
 
       checkbox = p.createCheckbox('Colored Mode', false);
       checkbox.changed(myCheckedEvent);

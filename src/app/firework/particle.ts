@@ -27,7 +27,7 @@ export class Particle {
 
 
       if (hFlag) {
-        const i = this.p.random(0, 360);
+        const i = this.p.random(0, 6.4);
         // do the shape of fireworks here
         // size is here
         const xVel = 16 * Math.pow(Math.sin(i), 3);
