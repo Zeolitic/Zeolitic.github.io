@@ -12,6 +12,7 @@ import { MatrixComponent } from './matrix/matrix.component';
 import { FlowfieldComponent } from './flowfield/flowfield.component';
 import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.component';
 import { RaindropComponent } from './raindrop/raindrop.component';
+import { ReflectComponent } from './reflect/reflect.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RaindropComponent } from './raindrop/raindrop.component';
     MatrixComponent,
     FlowfieldComponent,
     MarchingsquaresComponent,
-    RaindropComponent
+    RaindropComponent,
+    ReflectComponent
   ],
   imports: [
     BrowserModule,
