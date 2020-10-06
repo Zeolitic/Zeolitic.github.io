@@ -31,12 +31,14 @@ export class ImpressionismComponent implements OnInit {
 
       const canvas = p.createCanvas(800, 400);
       canvas.parent('sketch-holder');
+      canvas.style('display', 'block');
 
       const seed = Math.floor(p.random(1, 1000000));
       const url = 'https://picsum.photos/seed/' + seed + '/' + p.width + '/' + p.height;
 
       const origImg = p.createImg(url);
       origImg.parent('sketch-holder');
+      origImg.style('display', 'block');
       image = p.loadImage(url);
     };
 
