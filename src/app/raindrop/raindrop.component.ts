@@ -36,7 +36,8 @@ export class RaindropComponent implements OnInit {
 
     p.setup = () => {
       p.pixelDensity(1);
-      p.createCanvas(600, 400);
+      const canvas = p.createCanvas(600, 400);
+      canvas.parent('sketch-holder');
       p.background(0);
 
       cols = p.width;

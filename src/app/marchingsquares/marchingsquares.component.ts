@@ -53,7 +53,8 @@ export class MarchingsquaresComponent implements OnInit {
     let button;
 
     p.setup = () => {
-      p.createCanvas(800, 800);
+      const canvas = p.createCanvas(800, 800);
+      canvas.parent('sketch-holder');
 
       rows = p.floor(p.height / scale);
       cols = p.floor(p.width / scale);
@@ -61,16 +62,20 @@ export class MarchingsquaresComponent implements OnInit {
 
       button = p.createButton('New');
       button.mousePressed(setup);
-
+      button.parent('sketch-holder');
+      button.style('display', 'block');
 
       raycheckbox = p.createCheckbox('Show Rays', false);
       raycheckbox.changed(rayToggle);
+      raycheckbox.parent('sketch-holder');
 
       pointcheckbox = p.createCheckbox('Show Points', false);
       pointcheckbox.changed(pointToggle);
+      pointcheckbox.parent('sketch-holder');
 
       bgcheckbox = p.createCheckbox('Show Background', true);
       bgcheckbox.changed(bgToggle);
+      bgcheckbox.parent('sketch-holder');
 
 
       particle = new Particle(p);

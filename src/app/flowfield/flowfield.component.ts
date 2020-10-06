@@ -42,16 +42,19 @@ export class FlowfieldComponent implements OnInit {
     let button;
 
     p.setup = () => {
-      p.createCanvas(800, 800);
+      const canvas = p.createCanvas(800, 800);
+      canvas.parent('sketch-holder');
       p.background(255);
       cols = p.floor(p.width / scale);
       rows = p.floor(p.height / scale);
       p.colorMode(p.HSB);
 
       checkbox = p.createCheckbox('Colored Mode', false);
+      checkbox.parent('sketch-holder');
       checkbox.changed(myCheckedEvent);
 
       button = p.createButton('Clear Page');
+      button.parent('sketch-holder');
       button.mousePressed(myCheckedEventClear);
 
       flowfield = new Array(cols * rows);

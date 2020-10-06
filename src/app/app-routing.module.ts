@@ -8,6 +8,7 @@ import { FlowfieldComponent } from './flowfield/flowfield.component';
 import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.component';
 import { RaindropComponent } from './raindrop/raindrop.component';
 import { ReflectComponent } from './reflect/reflect.component';
+import { ImpressionismComponent } from './impressionism/impressionism.component';
 
 
 const routes: Routes = [
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'examples/marchingsquares', component: MarchingsquaresComponent},
   { path: 'examples/raindrops', component: RaindropComponent},
   { path: 'examples/reflect', component: ReflectComponent},
+  { path: 'examples/impressionism', component: ImpressionismComponent},
   { path: '**', component: MainComponent}
 ];
 

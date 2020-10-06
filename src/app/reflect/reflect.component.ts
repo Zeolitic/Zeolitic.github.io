@@ -58,8 +58,8 @@ export class ReflectComponent implements OnInit {
     }
     function sleep(ms) {return new Promise(resolve => setTimeout(resolve, ms)); }
 
-    p.setup = async () => {
 
+    async function run() {
       const url = 'http://colormind.io/api/';
       const data = {
         model : 'default',
@@ -100,8 +100,18 @@ export class ReflectComponent implements OnInit {
 
       const fuzz = 300;
 
-      p.createCanvas(400, 600);
+      const canvas = p.createCanvas(400, 600);
+      canvas.parent('sketch-holder');
       p.background(0);
+
+      if (button !== undefined) {
+        button.remove();
+      }
+
+      button = p.createButton('New');
+      button.mousePressed(run);
+      button.parent('sketch-holder');
+      button.style('display', 'block');
 
       // three points to connect lines
       const p1 = {x: p.random(p.width), y: p.random(p.height)};
@@ -253,6 +263,11 @@ export class ReflectComponent implements OnInit {
           }
         }
       }
+    }
+    let button;
+
+    p.setup = async () => {
+      run();
     };
   }
 }

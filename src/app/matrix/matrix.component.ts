@@ -34,7 +34,8 @@ export class MatrixComponent implements OnInit {
     let symbolSize = 18;
 
     p.setup = () => {
-      p.createCanvas(800, 800);
+      const canvas = p.createCanvas(800, 800);
+      canvas.parent('sketch-holder');
       let x = 0;
       for (let i = 0; i <= p.width / symbolSize; i++) {
         let stream = new Stream(p, fadeInterval, symbolSize);

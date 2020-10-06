@@ -30,7 +30,8 @@ export class FireworkComponent implements OnInit {
     let fireworks = [];
 
     p.setup = () => {
-      p.createCanvas(800, 400);
+      const canvas = p.createCanvas(800, 400);
+      canvas.parent('sketch-holder');
       p.colorMode(p.HSB);
       p.stroke(255);
       p.strokeWeight(4);

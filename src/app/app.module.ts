@@ -13,6 +13,7 @@ import { FlowfieldComponent } from './flowfield/flowfield.component';
 import { MarchingsquaresComponent } from './marchingsquares/marchingsquares.component';
 import { RaindropComponent } from './raindrop/raindrop.component';
 import { ReflectComponent } from './reflect/reflect.component';
+import { ImpressionismComponent } from './impressionism/impressionism.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ReflectComponent } from './reflect/reflect.component';
     FlowfieldComponent,
     MarchingsquaresComponent,
     RaindropComponent,
-    ReflectComponent
+    ReflectComponent,
+    ImpressionismComponent
   ],
   imports: [
     BrowserModule,
