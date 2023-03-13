@@ -1,5 +1,9 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "44b9f0d3-fb41-4fc6-ba81-f643a30758ef",
+    "packageManager": "yarn"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
@@ -27,11 +31,12 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/themes/styles.scss",
+              "src/themes/theme.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           },
@@ -95,11 +100,12 @@
             "karmaConfig": "karma.conf.js",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/themes/styles.scss",
+              "src/themes/theme.scss",
+              "node_modules/aos/dist/aos.css"
             ],
             "scripts": []
           }

@@ -1,0 +1,27 @@
+.tech-sphere__content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  display: flex;
+  padding: 0 16em;
+}
+
+app-tech-sphere {
+  width: 130px;
+}
+
+
+@media screen and (max-width: 1125px) {
+  .tech-sphere__content {
+    padding: 0 8em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .tech-sphere__content {
+    display: none;
+  }
+}
+
+

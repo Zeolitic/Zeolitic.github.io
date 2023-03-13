@@ -1,0 +1,56 @@
+.navbar__content {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 8em;
+
+  h1 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.navbar__content-right {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+
+  a, button {
+    font-weight: normal;
+    font-size: 16px;
+  }
+
+  a {
+    cursor: pointer;
+    padding: 0 2px;
+  }
+
+  a:hover {
+    transform: scale(1.10);
+    font-weight: 600;
+    padding: 0 0.9px;
+  }
+}
+
+
+mat-toolbar {
+  padding: 0;
+}
+
+@media screen and (max-width: 1125px) {
+  .navbar__content {
+    padding: 0 4em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .navbar__content {
+    justify-content: center;
+  }
+  .navbar__content-right {
+    display: none;
+  }
+}
+
+
+

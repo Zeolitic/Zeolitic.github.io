@@ -1,0 +1,57 @@
+.contact__content {
+  padding: 5em;
+  width: 100%;
+}
+
+mat-card {
+  padding: 3em;
+  box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+}
+
+mat-card-header {
+  margin-bottom: 5em;
+}
+
+mat-card-title {
+  font-size: 64px !important;
+  line-height: 64px !important;
+  font-weight: 800;
+}
+
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-card-subtitle {
+  text-transform: uppercase;
+}
+
+textarea {
+  min-height: 80px;
+}
+
+@media screen and (max-width: 650px) {
+
+  .contact__content {
+    padding: 2em;
+  }
+
+  mat-card-header {
+    margin-bottom: 1em;
+  }
+
+  mat-card-title {
+    font-size: 32px !important;
+    line-height: 32px !important;
+    font-weight: 700;
+  }
+
+  mat-card {
+    padding: 1em;
+  }
+
+  textarea {
+    min-height: unset;
+  }
+}
