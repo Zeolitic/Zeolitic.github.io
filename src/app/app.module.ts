@@ -16,6 +16,7 @@ import { TechSphereComponent } from './tech-sphere/tech-sphere.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { TechSphereContainerComponent } from './tech-sphere-container/tech-sphere-container.component';
 import { WorkComponent } from './work/work.component';
+import { WorkCardComponent } from "./work-card/work-card.component";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { WorkComponent } from './work/work.component';
     TechSphereComponent,
     ProjectsComponent,
     TechSphereContainerComponent,
-    WorkComponent
+    WorkComponent,
+    WorkCardComponent
   ],
   imports: [
     BrowserModule,

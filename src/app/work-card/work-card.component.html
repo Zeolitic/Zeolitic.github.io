@@ -1,0 +1,19 @@
+<div class="work-card__content">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
+      <mat-card-title>{{title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <ng-container *ngIf="isArray(body); else noArray">
+        <p *ngFor="let row of $any(body)">
+          {{row}}
+        </p>
+      </ng-container>
+      <ng-template #noArray>
+        <p>{{body}}</p>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>
+

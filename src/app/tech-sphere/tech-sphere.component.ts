@@ -79,9 +79,9 @@ export class TechSphereComponent implements AfterViewInit {
     const time = this.clock.getElapsedTime();
     this.mesh.position.y = Math.cos(time) * 0.2;
 
-    if(this.mesh.rotation.y <= (Math.PI / 4)){
+    if(this.mesh.rotation.y <= (Math.PI / 8)){
       this.movingRight = true;
-    }else if(this.mesh.rotation.y >= 3 * (Math.PI / 4)){
+    }else if(this.mesh.rotation.y >= 7 * (Math.PI / 8)){
       this.movingRight = false;
     }
 
