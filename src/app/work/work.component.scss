@@ -5,7 +5,30 @@
 .work__content-grid {
   display: grid;
   grid-template-columns: 50% 50%;
-  background: linear-gradient(transparent, #00c1d6, #00c1d6, #00c1d6, transparent) no-repeat center/2px 100%;
+  background: linear-gradient(white, white) no-repeat center/2px 100%;
+}
+
+.line {
+  position: absolute;
+  left: calc(50% - 10px);
+  height: 2px;
+  width: 20px;
+  border: 1px solid white;
+}
+
+.arrow {
+  width: 10px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+
+  position: relative;
+  left: calc(50% - 5px);
+  top: -14px;
 }
 
 .work__content-words {
@@ -42,6 +65,10 @@
 @media screen and (max-width: 650px) {
   .work__content {
     padding: 1em 3em;
+  }
+
+  .work__content-grid {
+    grid-template-columns: 100%;
   }
 
   .work__content-words {

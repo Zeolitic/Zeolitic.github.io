@@ -1,0 +1,47 @@
+.project__content {
+  padding: 0 16em;
+}
+
+.project__content-words {
+  h1 {
+    font-size: 64px;
+    line-height: 64px;
+    font-weight: bold;
+  }
+
+  h3 {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.7);
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+
+@media screen and (max-width: 1125px) {
+  .project__content {
+    padding: 0 8em;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .project__content {
+    padding: 1em 3em;
+  }
+
+  .project__content-words {
+    h1 {
+      font-size: 32px;
+      line-height: 32px;
+    }
+
+    p {
+      font-size: 12px;
+    }
+  }
+}
+

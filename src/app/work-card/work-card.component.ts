@@ -9,6 +9,9 @@ export class WorkCardComponent {
   @Input() title: string = "";
   @Input() subtitle: string = "";
   @Input() body: string[] | string = "";
+  @Input() dateRange: string = "";
+  @Input() path: string = "";
+  @Input() direction?: "left" | "right";
 
   isArray(body: string[] | string){
     return Array.isArray(body);

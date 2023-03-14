@@ -1,6 +1,10 @@
+.work-card__content {
+  margin: 40px 50px;
+}
+
 mat-card {
-  margin: 10px;
   box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
+  border-bottom: white 2px solid;
 
   div {
     display: flex;
@@ -21,14 +25,73 @@ mat-card {
   }
 }
 
+.arrow {
+  border-style: solid;
+  position: absolute;
+  z-index: 10;
+  top: 80px;
+}
+
+.arrow.left {
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #424242 transparent transparent;
+  left: 40px;
+}
+
+.arrow.right {
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #424242;
+  right: 40px;
+}
+
+.date-range {
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.icon {
+  position: absolute;
+  z-index: 10;
+  top: 40px;
+
+
+  img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px white solid;
+  }
+}
+
+.icon.right {
+  right: -30px;
+}
+
+.icon.left {
+  left: -30px;
+}
+
 @media screen and (max-width: 650px) {
   mat-card-subtitle {
     font-size: 12px;
-    margin: 0;
+    line-height: 1;
   }
 
   mat-card-title {
     font-size: 14px;
+  }
+
+  mat-card-content {
+    p {
+      font-size: 13px;
+    }
+  }
+
+  .date-range.right, .date-range.left{
+    text-align: center;
+    background-color: #424242;
+    border-radius: 2px;
+    margin-bottom: 5px;
   }
 }
 

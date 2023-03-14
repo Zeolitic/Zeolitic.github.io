@@ -1,4 +1,7 @@
 <div class="work-card__content">
+  <div class="arrow" [ngClass]="direction ?? ''"></div>
+  <div class="icon" [ngClass]="direction ?? ''"><img [src]="path"></div>
+  <div class="date-range" [ngClass]="direction ?? ''">{{dateRange}}</div>
   <mat-card>
     <mat-card-header>
       <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
@@ -7,11 +10,11 @@
     <mat-card-content>
       <ng-container *ngIf="isArray(body); else noArray">
         <p *ngFor="let row of $any(body)">
-          {{row}}
+          • {{row}}
         </p>
       </ng-container>
       <ng-template #noArray>
-        <p>{{body}}</p>
+        <p>• {{body}}</p>
       </ng-template>
     </mat-card-content>
   </mat-card>
