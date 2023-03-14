@@ -73,11 +73,12 @@ export class TechSphereComponent implements AfterViewInit {
     return this.canvas.clientWidth / this.canvas.clientHeight;
   }
 
-  private roation = (Math.random() * (0.005 - 0.01) + 0.01);
+  private rotationStartPoint = (Math.random() * (0.005 - 0.01) + 0.01);
+  private oscillationStartPoint = (Math.random() * (1 - 10) + 10);
 
   private animateSphere() {
     const time = this.clock.getElapsedTime();
-    this.mesh.position.y = Math.cos(time) * 0.2;
+    this.mesh.position.y = (Math.cos(time + this.oscillationStartPoint) * 0.2);
 
     if(this.mesh.rotation.y <= (Math.PI / 8)){
       this.movingRight = true;
@@ -85,11 +86,10 @@ export class TechSphereComponent implements AfterViewInit {
       this.movingRight = false;
     }
 
-
     if(this.movingRight){
-      this.mesh.rotation.y += this.roation;
+      this.mesh.rotation.y += this.rotationStartPoint;
     }else {
-      this.mesh.rotation.y -= this.roation;
+      this.mesh.rotation.y -= this.rotationStartPoint;
     }
   }
 
