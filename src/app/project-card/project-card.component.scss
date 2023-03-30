@@ -8,6 +8,7 @@
 }
 
 mat-card {
+  padding: 2em;
   box-shadow: 0 8px 8px 8px rgba(0,0,0,.2), 0 8px 8px 0 rgba(0,0,0,.14), 0 8px 8px 0 rgba(0,0,0,.12) !important;
   flex: 1;
   display: flex;
@@ -52,6 +53,7 @@ mat-card {
     max-height: 250px;
     min-height: 250px;
     display: flex;
+    justify-content: center;
 
     img {
       max-width:100%;
@@ -68,6 +70,7 @@ mat-card {
 }
 
 @media screen and (max-width: 650px) {
+
   mat-card {
     max-width: 300px;
 
