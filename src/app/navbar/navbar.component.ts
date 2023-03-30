@@ -6,12 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.scss']
 })
 export class NavbarComponent {
-
   scrollToSection(anchor: string): void {
-    const ele = document.getElementById(anchor);
-
-    if(ele) ele.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
-
+    document.getElementById(anchor)?.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"});
   }
-
 }

@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-
 import * as THREE from "three";
 import { Base3DRendererComponent } from '../base-3d-renderer.component';
 

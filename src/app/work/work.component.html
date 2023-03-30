@@ -6,7 +6,7 @@
 
   <div class="line"></div>
   <div class="work__content-grid">
-    <ng-container *ngFor="let job of jobs; let i = index">
+    <ng-container *ngFor="let job of (jobs$ | async); let i = index">
       <ng-container *ngIf="i % 2 == 0; else left">
         <div data-aos="fade-right" data-aos-offset="500" ata-aos-duration="500" data-aos-anchor-placement="top-bottom" class="right">
           <app-work-card

@@ -11,7 +11,7 @@
   </div>
   <div class="project__content-container">
     <app-project-card
-    *ngFor="let project of projects"
+    *ngFor="let project of (projects$ | async)"
     [value]="project"
     ></app-project-card>
   </div>

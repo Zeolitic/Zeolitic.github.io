@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { concat, concatMap, delay, interval, map, mergeAll, of, repeat, take } from 'rxjs';
 
@@ -10,21 +11,9 @@ export class HeroComponent {
 
   private readonly alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',' ', '-'];
 
-  private readonly words = [
-    "Fullstack developer 💻",
-    "Mountain biker 🚵",
-    "Tech-driven 🤖",
-    "Car enthusiast 🚗",
-    "Software developer 👨‍💻",
-    "Video game lover 🎮",
-    "Angular developer 🅰️",
-    "Subaru lover 🚙",
-    "Computer scientist 👨‍🔬",
-    "Formula One addict 🏎️",
-    "Problem solver 🧩"
-  ];
+  constructor(private readonly http: HttpClient) {}
 
-  readonly characters$ = of(this.words).pipe(
+  readonly characters$ = this.http.get<string[]>('/assets/hero/words.json').pipe(
     mergeAll(),
     concatMap(word =>
       concat(

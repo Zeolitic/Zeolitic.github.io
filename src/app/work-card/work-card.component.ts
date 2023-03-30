@@ -11,7 +11,7 @@ export class WorkCardComponent {
   @Input() value!: Work;
   @Input() direction!: "left" | "right";
 
-  isArray(body: string[] | string){
+  isArray(body: string[] | string): boolean{
     return Array.isArray(body);
   }
 }

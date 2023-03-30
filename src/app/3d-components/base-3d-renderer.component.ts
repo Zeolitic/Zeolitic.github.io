@@ -1,11 +1,11 @@
-import { AfterViewInit, Component, Directive, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, Directive, ElementRef, ViewChild } from '@angular/core';
 
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 
 import * as THREE from "three";
 import { WebGLRendererParameters } from 'three';
-
 
 @Directive()
 export abstract class Base3DRendererComponent implements AfterViewInit {
@@ -24,7 +24,7 @@ export abstract class Base3DRendererComponent implements AfterViewInit {
   protected farClippingPlane: number = 100000
 
   protected camera!: THREE.PerspectiveCamera;
-  protected controls!: OrbitControls;
+  protected controls!: OrbitControls | TrackballControls;
   protected loader = new GLTFLoader();
   protected renderer!: THREE.WebGLRenderer;
 
@@ -56,7 +56,7 @@ export abstract class Base3DRendererComponent implements AfterViewInit {
 
 
   protected createRenderer() {
-    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance", alpha: true});
+    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance", alpha: true} as WebGLRendererParameters);
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
   }

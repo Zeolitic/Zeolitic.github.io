@@ -1,9 +1,6 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core';
-import { TrackballControls } from 'three/examples/jsm/controls/TrackballControls';
-
+import { Component } from '@angular/core';
 
 import * as THREE from "three";
-import { Group } from 'three';
 import { Base3DRendererComponent } from '../base-3d-renderer.component';
 
 @Component({

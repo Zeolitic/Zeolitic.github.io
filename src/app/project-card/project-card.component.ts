@@ -9,7 +9,7 @@ import { Project } from '../projects/projects.component';
 export class ProjectCardComponent {
   @Input() value!: Project;
 
-  goToLink(url: string) {
+  goToLink(url: string): void {
     window.open(url, "_blank");
   }
 }

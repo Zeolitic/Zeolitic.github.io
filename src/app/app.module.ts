@@ -17,6 +17,7 @@ import { WorkComponent } from './work/work.component';
 import { WorkCardComponent } from "./work-card/work-card.component";
 import { ProjectCardComponent } from './project-card/project-card.component';
 import { CarComponent } from './3d-components/car/car.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CarComponent } from './3d-components/car/car.component';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
