@@ -16,9 +16,9 @@ export class StarsComponent extends Base3DRendererComponent {
     this.scene = new THREE.Scene();
 
     const vertices = [];
-    for ( let i = 0; i < 100000; i ++ ) {
-      const x = THREE.MathUtils.randFloatSpread(100);
-      const y = THREE.MathUtils.randFloatSpread(100);
+    for ( let i = 0; i < 1500; i ++ ) {
+      const x = THREE.MathUtils.randFloatSpread(10);
+      const y = THREE.MathUtils.randFloatSpread(10);
       const z = THREE.MathUtils.randFloatSpread(500);
 
       vertices.push( x, y, z );
