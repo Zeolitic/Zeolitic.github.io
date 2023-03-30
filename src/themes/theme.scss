@@ -1,5 +1,14 @@
 @use '@angular/material' as mat;
-@include mat.core();
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
+@include mat.all-legacy-component-typographies();
+@include mat.legacy-core();
 
 @import '@angular/material/theming';
 @import "./styles.scss";
@@ -23,7 +32,7 @@ $dark-theme: mat.define-dark-theme((
 ));
 
 @include style-theme($dark-theme, $dark-success, $dark-info, $dark-warning);
-@include mat.all-component-themes($dark-theme);
+@include mat.all-legacy-component-themes($dark-theme);
 
 
 .light-theme {
@@ -45,16 +54,16 @@ $dark-theme: mat.define-dark-theme((
   );
 
   @include style-theme($light-theme, $light-success, $light-info, $light-warning);
-  @include mat.all-component-themes($light-theme);
+  @include mat.all-legacy-component-themes($light-theme);
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-$custom-typography: mat.define-typography-config(
+$custom-typography: mat.define-legacy-typography-config(
   $font-family: 'Poppins'
 );
 
-@include mat.all-component-typographies($custom-typography);
+@include mat.all-legacy-component-typographies($custom-typography);
 
 html, body { height: 100%; }
 body { margin: 0; }
