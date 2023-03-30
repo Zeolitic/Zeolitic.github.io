@@ -1,20 +1,20 @@
 <div class="work-card__content">
   <div class="arrow" [ngClass]="direction ?? ''"></div>
-  <div class="icon" [ngClass]="direction ?? ''"><img [src]="path"></div>
-  <div class="date-range" [ngClass]="direction ?? ''">{{dateRange}}</div>
+  <div class="icon" [ngClass]="direction ?? ''"><img [src]="value.imagePath"></div>
+  <div class="date-range" [ngClass]="direction ?? ''">{{value.dateRange}}</div>
   <mat-card>
     <mat-card-header>
-      <mat-card-subtitle>{{subtitle}}</mat-card-subtitle>
-      <mat-card-title>{{title}}</mat-card-title>
+      <mat-card-subtitle>{{value.company}}</mat-card-subtitle>
+      <mat-card-title>{{value.title}}</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <ng-container *ngIf="isArray(body); else noArray">
-        <p *ngFor="let row of $any(body)">
+      <ng-container *ngIf="isArray(value.description); else noArray">
+        <p *ngFor="let row of $any(value.description)">
           • {{row}}
         </p>
       </ng-container>
       <ng-template #noArray>
-        <p>• {{body}}</p>
+        <p>• {{work.description}</p>
       </ng-template>
     </mat-card-content>
   </mat-card>

@@ -21,6 +21,19 @@
   }
 }
 
+.project__content-container {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-top: 2em;
+}
+
+app-project-card {
+  min-width: 500px;
+  max-width: 500px;
+}
+
 
 @media screen and (max-width: 1125px) {
   .project__content {
@@ -29,6 +42,12 @@
 }
 
 @media screen and (max-width: 650px) {
+
+  app-project-card {
+    min-width: 300px;
+    max-width: 300px;
+  }
+
   .project__content {
     padding: 1em 3em;
   }
@@ -44,4 +63,5 @@
     }
   }
 }
+
 

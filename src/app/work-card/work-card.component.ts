@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Work } from '../work/work.component';
 
 @Component({
   selector: 'app-work-card',
@@ -6,11 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./work-card.component.scss']
 })
 export class WorkCardComponent {
-  @Input() title: string = "";
-  @Input() subtitle: string = "";
-  @Input() body: string[] | string = "";
-  @Input() dateRange: string = "";
-  @Input() path: string = "";
+
+  @Input() value!: Work;
   @Input() direction?: "left" | "right";
 
   isArray(body: string[] | string){

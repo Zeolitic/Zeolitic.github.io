@@ -10,22 +10,14 @@
       <ng-container *ngIf="i % 2 == 0; else left">
         <div data-aos="fade-right" data-aos-offset="500" ata-aos-duration="500" data-aos-anchor-placement="top-bottom" class="right">
           <app-work-card
-          [title]="job.title"
-          [subtitle]="job.company"
-          [body]="job.description"
-          [dateRange]="job.dateRange"
-          [path]="job.imagePath"
+          [value]="job"
           direction="right"></app-work-card>
         </div>
       </ng-container>
       <ng-template #left>
         <div data-aos="fade-left" data-aos-offset="500" ata-aos-duration="500" data-aos-anchor-placement="top-bottom" class="left">
           <app-work-card
-          [title]="job.title"
-          [subtitle]="job.company"
-          [body]="job.description"
-          [dateRange]="job.dateRange"
-          [path]="job.imagePath"
+          [value]="job"
           direction="left"></app-work-card>
         </div>
       </ng-template>

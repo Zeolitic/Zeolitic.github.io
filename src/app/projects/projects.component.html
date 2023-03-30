@@ -6,7 +6,13 @@
       The following projects show off my skills in real-world projects which I have built. Each project is breifly described with links to relevant code and real world examples if they exist. These reflect my abilities to work with frameworks and tools, as well as solve complex problems.
     </p>
     <p>
-      The project I like to show off the most is F1L, a website that allows users to manage their own F1 league. This project allowed me to showcase my skills in full-stack development, database design, and project management.
+      The project I like to show off the most is F1L, a website that allows users to manage their own F1 league. This project allowed me to showcase my skills in full-stack development, and database design.
     </p>
+  </div>
+  <div class="project__content-container">
+    <app-project-card
+    *ngFor="let project of projects"
+    [value]="project"
+    ></app-project-card>
   </div>
 </div>

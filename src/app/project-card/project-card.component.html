@@ -1,0 +1,28 @@
+<div class="project-card__content">
+  <mat-card>
+    <div class="project-card__image-wrapper">
+      <img mat-card-image [src]="value.imagePath" class="project-card__image">
+    </div>
+    <mat-card-header>
+      <mat-card-title>{{value.title}}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <p>{{value.description}}</p>
+      <div class="spacer"></div>
+      <div class="project-card__footer">
+        <div class="project-card__technologies">
+          <p *ngFor="let tech of value.technologies">{{tech}}</p>
+        </div>
+        <div class="project-card__links">
+          <button *ngIf="value.githubLink" mat-icon-button color="primary" (click)="goToLink(value.githubLink)">
+            <img src="/assets/tech/github-project.png" class="button-link"/>
+          </button>
+          <button *ngIf="value.siteLink" mat-icon-button color="accent" (click)="goToLink(value.siteLink)">
+            <mat-icon>link</mat-icon>
+          </button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
+

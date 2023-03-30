@@ -41,11 +41,11 @@ export class WorkComponent {
       dateRange: "January 2022 - Now",
       imagePath: "/assets/jobs/goc.png",
     },
-  ] as WorkCard[];
+  ] as Work[];
 
 }
 
-interface WorkCard {
+export interface Work {
   title: string;
   company: string;
   description: string | string[];
