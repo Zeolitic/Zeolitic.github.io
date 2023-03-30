@@ -42,10 +42,6 @@ export class StarsComponent extends Base3DRendererComponent {
   }
 
   protected override startRenderingLoop() {
-    this.renderer = new THREE.WebGLRenderer(Base3DRendererComponent.constructDefaultWebGlRendererParams(this.canvas));
-    this.renderer.setPixelRatio(devicePixelRatio);
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-
     let component: StarsComponent = this;
     (function render() {
       requestAnimationFrame(render);

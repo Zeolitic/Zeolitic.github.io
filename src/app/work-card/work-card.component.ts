@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Work } from '../work/work.component';
 
 @Component({
@@ -9,7 +9,7 @@ import { Work } from '../work/work.component';
 export class WorkCardComponent {
 
   @Input() value!: Work;
-  @Input() direction?: "left" | "right";
+  @Input() direction!: "left" | "right";
 
   isArray(body: string[] | string){
     return Array.isArray(body);

@@ -10,10 +10,6 @@ import { WebGLRendererParameters } from 'three';
 @Directive()
 export abstract class Base3DRendererComponent implements AfterViewInit {
 
-  static constructDefaultWebGlRendererParams(canvas: HTMLCanvasElement) {
-    return {canvas: canvas, preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance", alpha: true} as WebGLRendererParameters;
-  }
-
   @ViewChild('canvas') private canvasRef!: ElementRef;
   protected get canvas(): HTMLCanvasElement {
     return this.canvasRef.nativeElement;
@@ -60,7 +56,7 @@ export abstract class Base3DRendererComponent implements AfterViewInit {
 
 
   protected createRenderer() {
-    this.renderer = new THREE.WebGLRenderer(Base3DRendererComponent.constructDefaultWebGlRendererParams(this.canvas));
+    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance", alpha: true});
     this.renderer.setPixelRatio(devicePixelRatio);
     this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
   }

@@ -1,7 +1,7 @@
 <div class="work-card__content">
-  <div class="arrow" [ngClass]="direction ?? ''"></div>
-  <div class="icon" [ngClass]="direction ?? ''"><img [src]="value.imagePath"></div>
-  <div class="date-range" [ngClass]="direction ?? ''">{{value.dateRange}}</div>
+  <div class="arrow" [ngClass]="direction"></div>
+  <div class="icon" [ngClass]="direction"><img [src]="value.imagePath"></div>
+  <div class="date-range" [ngClass]="direction">{{value.dateRange}}</div>
   <mat-card>
     <mat-card-header>
       <mat-card-subtitle>{{value.company}}</mat-card-subtitle>
