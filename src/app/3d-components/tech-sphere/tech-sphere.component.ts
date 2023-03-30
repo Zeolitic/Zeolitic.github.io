@@ -1,23 +1,22 @@
-import { AfterViewInit, Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
-import { DecalGeometry } from 'three/examples/jsm/geometries/DecalGeometry.js';
+import { Component, Input } from '@angular/core';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 import * as THREE from "three";
+import { Base3DRendererComponent } from '../base-3d-renderer.component';
 
 @Component({
   selector: 'app-tech-sphere',
-  templateUrl: './tech-sphere.component.html',
-  styleUrls: ['./tech-sphere.component.scss']
+  templateUrl: './tech-sphere.component.html'
 })
-export class TechSphereComponent implements AfterViewInit {
+export class TechSphereComponent extends Base3DRendererComponent {
 
-  @ViewChild('canvas') private canvasRef!: ElementRef;
+  protected override fieldOfView = 1;
 
   private geometry = new THREE.IcosahedronGeometry(1, 1);
   private mesh!: THREE.Mesh;
+  private clock = new THREE.Clock();
 
   @Input() public set texture(path: string) {
-
     const material = new THREE.MeshStandardMaterial({
       map: new THREE.TextureLoader().load(path),
       flatShading: true
@@ -25,31 +24,9 @@ export class TechSphereComponent implements AfterViewInit {
     this.mesh = new THREE.Mesh(this.geometry, material);
   }
 
-
-  @Input() public cameraZ: number = 400
-  @Input() public fieldOfView: number = 1
-  @Input() public nearClippingPlane: number = 1
-  @Input() public farClippingPlane: number = 100000
-
-
-
-
   private movingRight = true;
 
-  private camera!: THREE.PerspectiveCamera;
-  private controls!: OrbitControls;
-
-  private renderer!: THREE.WebGLRenderer;
-
-  private clock = new THREE.Clock();
-
-  private scene!: THREE.Scene;
-
-  private get canvas(): HTMLCanvasElement {
-    return this.canvasRef.nativeElement;
-  }
-
-  private createScene() {
+  protected override createScene() {
     this.scene = new THREE.Scene();
 
     this.scene.add(new THREE.AmbientLight(0xffffff, 0.35));
@@ -57,20 +34,7 @@ export class TechSphereComponent implements AfterViewInit {
     directionalLight.position.set(0,0,15);
     this.scene.add(directionalLight);
 
-    let aspectRatio = this.getAspectRatio();
-    this.camera = new THREE.PerspectiveCamera(
-      this.fieldOfView,
-      aspectRatio,
-      this.nearClippingPlane,
-      this.farClippingPlane
-    );
-    this.camera.position.z = this.cameraZ - 250;
-
     this.scene.add(this.mesh);
-  }
-
-  private getAspectRatio() {
-    return this.canvas.clientWidth / this.canvas.clientHeight;
   }
 
   private rotationStartPoint = (Math.random() * (0.005 - 0.01) + 0.01);
@@ -93,11 +57,7 @@ export class TechSphereComponent implements AfterViewInit {
     }
   }
 
-  private startRenderingLoop() {
-    this.renderer = new THREE.WebGLRenderer({canvas: this.canvas, preserveDrawingBuffer: true, antialias: true, powerPreference: "high-performance", alpha: true});
-    this.renderer.setPixelRatio(devicePixelRatio);
-    this.renderer.setSize(this.canvas.clientWidth, this.canvas.clientHeight);
-
+  protected override createControls() {
     this.controls = new OrbitControls(this.camera, this.renderer.domElement);
     this.controls.rotateSpeed = 1;
     this.controls.autoRotate = false;
@@ -105,7 +65,9 @@ export class TechSphereComponent implements AfterViewInit {
     this.controls.maxPolarAngle = Math.PI / 2;
     this.controls.minPolarAngle = Math.PI / 2;
     this.controls.enablePan = false;
+  }
 
+  protected override startRenderingLoop() {
     let component: TechSphereComponent = this;
     (function render() {
       requestAnimationFrame(render);
@@ -115,10 +77,4 @@ export class TechSphereComponent implements AfterViewInit {
     }());
 
   }
-
-  ngAfterViewInit() {
-    this.createScene();
-    this.startRenderingLoop();
-  }
-
 }
