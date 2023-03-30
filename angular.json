@@ -7,7 +7,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "new-personal-website": {
+    "ryanabaker": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -24,7 +24,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/new-personal-website",
+            "outputPath": "dist/ryanabaker",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "new-personal-website:build:production"
+              "browserTarget": "ryanabaker:build:production"
             },
             "development": {
-              "browserTarget": "new-personal-website:build:development"
+              "browserTarget": "ryanabaker:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "new-personal-website:build"
+            "browserTarget": "ryanabaker:build"
           }
         },
         "test": {
